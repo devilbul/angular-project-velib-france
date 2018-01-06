@@ -1,0 +1,53 @@
+<div class="root-body">
+  <div class="root-title">
+    <h1>
+      Vélib à <strong>{{ this.contract_name }}</strong> !
+    </h1>
+  </div>
+  <div class="centrage" *ngIf="!this.isSelected">
+    <div class="root-description">
+      <h3>
+        Sélectionner une station dans {{ this.contract_name }} pour voir<br/>
+        les autres stations dans un rayon de 500 mètres.
+      </h3>
+    </div>
+    <div class="div-root-select">
+      <select class="select-station" #selectElem (change)="this.setStationSelected(selectElem.value)" title="selectStation">
+        <option selected disabled>Choissiez une station de vélib</option>
+        <option *ngFor="let station of stationsArray" [value]="station.number">{{ station.name }}</option>
+      </select>
+    </div>
+    <div class="div-root-button">
+      <button class="button-voir" (click)="this.isStationIsSelected()"> Voir </button>
+    </div>
+    <div class="div-root-historic">
+      <div *ngIf="this.stationHistoric.length > 0">
+        <div class="historic-title">
+          <h2>
+            Historique :
+          </h2>
+        </div>
+        <ul>
+          <li *ngFor="let stationH of this.stationHistoric; let i=index">
+            <span>
+              <div class="historic-item">
+                <button class="button-revoir" (click)="this.isStationHistoricIsSelected(i)"> Revoir </button>
+                   {{ stationH.name }}
+              </div>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="div-root-button">
+      <button class="button-change-ville" id="changeVille" (click)="this.retour()">Changer de ville</button>
+    </div>
+  </div>
+  <div *ngIf="this.isSelected">
+    <app-google-map
+      [stationsArray]="this.stationsArray"
+      [stationSelected]="this.stationSelected"
+      (change)="updateFromChild($event)">
+    </app-google-map>
+  </div>
+</div>

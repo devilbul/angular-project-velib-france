@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  color:black;
+  background:
+    linear-gradient(
+      rgba(69, 69, 69, 0.45),
+      rgba(69, 69, 69, 0.45)
+    ),
+  url(assets/station_velib.jpg) no-repeat fixed;
+  background-size: 100%;
+  margin: 10%;
+}
+
+.root {
+  margin: auto;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75)
+  );
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 40px;
+  border: solid #444444 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.root-title {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  color: white;
+  margin: auto;
+  text-align: center;
+}
+

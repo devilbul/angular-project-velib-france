@@ -1,0 +1,29 @@
+<div class="root-body">
+  <div class="centrage" *ngIf="!this.isSelected">
+    <div class="root-title">
+      <h1>
+        Vélib en France !
+      </h1>
+    </div>
+    <div class="root-description">
+      <h3>
+        Sélectionner une ville<br/>
+      </h3>
+    </div>
+    <div class="div-root-select">
+      <select class="select-station" #selectElem (change)="this.setContractSelected(selectElem.value)" title="selectStation">
+          <option selected disabled>Choissiez une ville</option>
+          <option *ngFor="let contract of contractsArray" [value]="contract.name">{{ contract.name }}</option>
+      </select>
+    </div>
+    <div class="div-root-button">
+      <button class="button-voir" (click)="this.isContractIsSelected()"> Voir </button>
+    </div>
+  </div>
+  <div class="root-body" *ngIf="this.isSelected">
+    <app-stations
+      [contract]="this.contractSelected"
+      (changeVille)="updateFromChild($event)">
+    </app-stations>
+  </div>
+</div>

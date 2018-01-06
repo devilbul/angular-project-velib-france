@@ -1,0 +1,44 @@
+.agm-map {
+  margin: 20px 0;
+  height: 800px;
+}
+
+.div-google-map {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: solid #444444 10px;
+  box-sizing: border-box;
+}
+
+.button-retour {
+  color: rgb(230, 230, 230);
+  font-size: 20px;
+  padding: 10px;
+  text-shadow: 2px 1px 0px rgba(30, 30, 30, 0.8);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: rgb(25, 25, 25);
+  background: -moz-linear-gradient(40deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  background: -webkit-linear-gradient(40deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  background: -o-linear-gradient(40deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  background: -ms-linear-gradient(40deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  background: linear-gradient(310deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  -webkit-box-shadow: 4px 3px 7px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    4px 3px 7px rgba(50, 50, 50, 0.75);
+  box-shadow:         4px 3px 7px rgba(50, 50, 50, 0.75);
+  margin: 20px auto;
+  width: 100%;
+}
+
+.div-google-map-button {
+  margin: auto;
+  width: 25%;
+}
+
+.centrage {
+  vertical-align: baseline;
+  margin: 5px auto;
+  width: 97.5%;
+}

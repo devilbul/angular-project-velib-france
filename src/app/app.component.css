@@ -1,0 +1,102 @@
+.button-revoir {
+  color: rgb(230, 230, 230);
+  font-size: 10px;
+  padding: 5px;
+  text-shadow: 2px 1px  rgba(30, 30, 30, 0.8);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: rgb(25, 25, 25);
+  background: -moz-linear-gradient(40deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  background: -webkit-linear-gradient(40deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  background: -o-linear-gradient(40deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  background: -ms-linear-gradient(40deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  background: linear-gradient(310deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  -webkit-box-shadow: 4px 3px 7px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    4px 3px 7px rgba(50, 50, 50, 0.75);
+  box-shadow:         4px 3px 7px rgba(50, 50, 50, 0.75);
+}
+
+.historic-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  margin: auto;
+  text-align: left;
+}
+
+.historic-title {
+  color: white;
+  margin: auto;
+  text-align: center;
+  border-bottom: solid #444444 10px;
+  box-sizing: border-box;
+}
+
+.div-root-historic {
+  width: 100%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 40px;
+  border: solid #444444 10px;
+  box-sizing: border-box;
+}
+
+.select-station {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  margin: 10px auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.div-root-select {
+  margin: auto;
+  width: 75%;
+}
+
+.button-voir {
+  color: rgb(230, 230, 230);
+  font-size: 20px;
+  padding: 10px;
+  text-shadow: 2px 1px 0 rgba(30, 30, 30, 0.8);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: rgb(25, 25, 25);
+  background: -moz-linear-gradient(40deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  background: -webkit-linear-gradient(40deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  background: -o-linear-gradient(40deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  background: -ms-linear-gradient(40deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  background: linear-gradient(310deg, rgb(25, 25, 25) 15%, rgb(135, 135, 135) 75%);
+  -webkit-box-shadow: 4px 3px 7px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    4px 3px 7px rgba(50, 50, 50, 0.75);
+  box-shadow:         4px 3px 7px rgba(50, 50, 50, 0.75);
+  margin: 20px auto;
+  width: 100%;
+}
+
+.div-root-button {
+  margin: auto;
+  width: 25%;
+}
+
+.centrage {
+  vertical-align: baseline;
+  margin: 5px auto;
+  width: 75%;
+}
+
+.root-body {
+
+}
+
+.root-description {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: white;
+  margin: auto;
+  text-align: center;
+}

@@ -1,0 +1,69 @@
+<div class="centrage">
+  <div class="div-google-map-button">
+    <button class="button-retour" id="retourTop" (click)="this.retour()">Retour</button>
+  </div>
+  <div class="div-google-map">
+    <agm-map
+      class="agm-map"
+      [zoom]="16"
+      [scaleControl]="true"
+      [latitude]="getLatStation(this.stationSelected)"
+      [longitude]="getLngStation(this.stationSelected)">
+      <agm-marker
+        [latitude]="getLatStation(this.stationSelected)"
+        [longitude]="getLngStation(this.stationSelected)" >
+        <agm-info-window>
+          <strong>{{ this.stationSelected.name }}</strong>
+          <p>{{ this.stationSelected.address }}</p>
+          <strong *ngIf="this.stationSelected.status == 'OPEN'" style="color:green">Ouvert</strong>
+          <strong *ngIf="this.stationSelected.status == 'CLOSED'" style="color:red">Fermé</strong>
+          <p *ngIf="this.stationSelected.banking">Terminal de paiement</p>
+          <p *ngIf="this.stationSelected.bonus">Station bonus</p>
+          <p>nombre de points d'attache : {{ this.stationSelected.bike_stands }}</p>
+          <p>nombre de points d'attache disponibles : {{ this.stationSelected.available_bike_stands }}</p>
+          <p>nombre de vélos disponibles : {{ this.stationSelected.available_bikes }}</p>
+          <p>dernière mise à jour : {{ getDate(this.stationSelected) }}</p>
+        </agm-info-window>
+      </agm-marker>
+      <agm-circle
+        [latitude]="getLatStation(this.stationSelected)"
+        [longitude]="getLngStation(this.stationSelected)"
+        [radius]="500"
+        [fillOpacity]="0.25"
+        [fillColor]="D3D3D3">
+      </agm-circle>
+      <div
+        *ngFor="let station of stationsArray; let i=index">
+        <agm-marker
+          *ngIf="this.calculDistance(this.stationSelected, station) <= 500.0 && station != stationSelected"
+          [latitude]="getLatStation(station)"
+          [longitude]="getLngStation(station)" >
+          <agm-info-window>
+            <strong>{{ station.name }}</strong>
+            <p>{{ station.address }}</p>
+            <strong *ngIf="station.status == 'OPEN'" style="color:green">Ouvert</strong>
+            <strong *ngIf="station.status == 'CLOSED'" style="color:red">Fermé</strong>
+            <p>à {{ this.calculDistance(this.stationSelected, station) }} mètres</p>
+            <p *ngIf="station.banking">Terminal de paiement</p>
+            <p *ngIf="station.bonus">Station bonus</p>
+            <p *ngIf="this.stationPlusDetails.get(i)">nombre de points d'attache : {{ station.bike_stands }}</p>
+            <p *ngIf="this.stationPlusDetails.get(i)">nombre de points d'attache disponibles : {{ station.available_bike_stands }}</p>
+            <p *ngIf="this.stationPlusDetails.get(i)">nombre de vélos disponibles : {{ station.available_bikes }}</p>
+            <a *ngIf="!this.stationPlusDetails.get(i)" (click)="this.changePlusDetails(i)" href="#">Plus de details</a>
+            <a *ngIf="this.stationPlusDetails.get(i)" (click)="this.changePlusDetails(i)" href="#">Moins de details</a>
+            <p>dernière mise à jour : {{ getDate(station) }}</p>
+          </agm-info-window>
+        </agm-marker>
+
+        <agm-marker
+          [latitude]="current-location"
+          [longitude]="current-location">
+
+        </agm-marker>
+      </div>
+    </agm-map>
+  </div>
+  <div class="div-google-map-button">
+    <button class="button-retour" id="retourBottom" (click)="this.retour()">Retour</button>
+  </div>
+</div>
